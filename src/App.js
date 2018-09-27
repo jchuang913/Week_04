@@ -14,6 +14,12 @@ class App extends Component {
     })
   };
 
+  removeParameter = () => {
+    this.setState({
+      todos: []
+    })
+  };
+
   render() {
     return (
       <div>
@@ -21,7 +27,8 @@ class App extends Component {
         {this.state.todos.map(x => (
           <ToDoListItem todo={x} />
         ))}
-        <button onClick={this.addParameter}> Add todo</button>
+        <button onClick={this.addParameter}> Add todo </button>
+        <button onClick={this.removeParameter}> Remove all </button>
       </div>
     );
   }
